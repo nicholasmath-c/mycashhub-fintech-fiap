@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --main-color: #6eeb83;
+    --main-color-dark: #00806A;
+    --bg-color: #19173D;
+    --bg-color-light: #8075FF;
+}
+
+*{
+    outline: none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
+body{
+    background-color: var(--bg-color);
+}
+
+h1{
+    font-size: x-large;
+    font-weight: 600;
+}
+
+p{
+    font-size: small;
+}
+
+label{
+    font-size: small;
+    font-weight: 500;
+}
+
+a{
+    text-decoration: none;
+    font-size: small;
+}
+
+img{
+    width: 100%;
+}
+
+
+/* Botões */
+@property --btn-primary-color-1 {
+    syntax: '<color>';
+    initial-value: #6eeb83;
+    inherits: false;
+}
+
+@property --btn-primary-color-2 {
+    syntax: '<color>';
+    initial-value: #00806A;
+    inherits: false;
+}
+
+@property --btn-secondary-color-1 {
+    syntax: '<color>';
+    initial-value: #8075FF;
+    inherits: false;
+}
+
+@property --btn-secondary-color-2 {
+    syntax: '<color>';
+    initial-value: #19173D;
+    inherits: false;
+}
+
+.btn{
+    width: 100%;
+    height: 38px;
+    padding: 8px 12px;
+    border-radius: 15px;
+    border: none;
+}
+
+.btn-primary{
+    background: linear-gradient(45deg, var(--btn-primary-color-1), var(--btn-primary-color-2));
+    transition: --btn-primary-color-1 0.4s ease-out, --btn-primary-color-2 0.2s ease-out;
+}
+
+.btn-primary:hover{
+    --btn-primary-color-1: #00806A;
+    --btn-primary-color-2: #6eeb83;
+}
+
+.btn-secondary{
+    background: linear-gradient(45deg, var(--btn-secondary-color-1), var(--btn-secondary-color-2));
+    transition: --btn-secondary-color-1 0.4s ease-out, --btn-secondary-color-2 0.2s ease-out;
+}
+
+.btn-secondary:hover{
+    --btn-secondary-color-1: #19173D;
+    --btn-secondary-color-2: #8075FF;
+}
+
+.container{
+    height: 100vh;
+    overflow: hidden;
+}
+
+#logo{
+    width: 120px;
+}
+
+.login-left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-card);
+    width: 100%;
+    max-height: 100%;
+    margin-top: 32px;
+    padding: 16px;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.login-header{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.login-form-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+}
+
+.form-item{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+input[type=text], input[type=password]{
+    padding: 6px 12px;
+    background-color: #211e4f;
+    border: solid 1px #1f1c5d;
+    width: 100%;
+    height: 38px;
+    border-radius: 10px;
+}
+
+input[type=text]:focus, input[type=password]:focus{
+    border-color: var(--bg-color-light);
+    background-color: var(--bg-color);
+}
+
+::placeholder{
+    color: #5D5A98;
+}
+
+.checkbox{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+input[type=checkbox]{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #211e4f;
+    margin: 0;
+    font: inherit;
+    color: #1f1c5d;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid #1f1c5d;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    transition: 120ms border-color ease-in-out;
+}
+
+input[type="checkbox"]::before{
+    content: "";
+    background-color: var(--bg-color-light);
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+  }
+
+  input[type="checkbox"]:checked::before{
+    transform: scale(0.8);
+  }
+
+  input[type="checkbox"]:checked{
+    border-color: var(--bg-color-light);
+  }
+
+#btnSubmit{
+    margin-top: 16px;
+}
+
+.link-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.link-button hr{
+    width: 44px;
+    border-color: var(--main-color);
+}
+
+.login-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    margin-top: 32px;
+}
+
+.login-right{
+    display: none;
+}
+
+
+/* md */
+@media (min-width: 768px){
+    .container{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .login-left{
+        width: 50%;
+    }
+
+    .login-right{
+        min-height: 100%;
+        display: block;
+        width: 50%;
+    }
+
+    .login-right img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* lg */
+@media (min-width: 1024px){
+    .btn-primary{
+        font-size: medium;
+        height: 44px;
+    }
+
+    input[type=text], input[type=password]{
+        height: 44px;
+    }
+
+    .login-left{
+        width: calc(100vw/3);
+    }
+
+    .login-right{
+        width: calc(100vw/3*2);
+    }
+
+    h1{
+        font-size: xx-large;
+    }
+
+    p{
+        font-size: medium;
+    }
+
+    label{
+        font-size: medium;
+    }
+
+    .login-footer p{
+        font-size: small;
+    }
+}
